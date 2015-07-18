@@ -11,6 +11,10 @@ Juncture NASDAQ implements the following protocols:
 
   - **NASDAQ TotalView-ITCH 5.0** 
 
+Juncture NASDAQ uses [Nassau][] for NASDAQ transport protocol support.
+
+  [Nassau]: https://github.com/jvirtanen/nassau
+
 
 Download
 --------
