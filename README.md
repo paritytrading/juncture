@@ -3,6 +3,9 @@ Juncture
 
 Juncture implements connectivity to various trading venues on the JVM.
 
+You can use Juncture for both live market access and historical market data
+analysis.
+
 Juncture requires Java Runtime Environment (JRE) 7 or newer.
 
 
