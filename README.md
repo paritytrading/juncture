@@ -3,6 +3,8 @@ Juncture
 
 Juncture implements connectivity to various trading venues on the JVM.
 
+Juncture requires Java Runtime Environment (JRE) 7 or newer.
+
 
 Features
 --------
