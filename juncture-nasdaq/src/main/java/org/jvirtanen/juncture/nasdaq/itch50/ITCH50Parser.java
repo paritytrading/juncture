@@ -2,9 +2,9 @@ package org.jvirtanen.juncture.nasdaq.itch50;
 
 import static org.jvirtanen.juncture.nasdaq.itch50.ITCH50.*;
 
+import com.paritytrading.nassau.MessageListener;
 import java.io.IOException;
 import java.nio.ByteBuffer;
-import org.jvirtanen.nassau.MessageListener;
 
 /**
  * A parser for inbound messages.

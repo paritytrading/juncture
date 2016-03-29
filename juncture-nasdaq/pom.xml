@@ -15,7 +15,7 @@
 
   <dependencies>
     <dependency>
-      <groupId>org.jvirtanen.nassau</groupId>
+      <groupId>com.paritytrading.nassau</groupId>
       <artifactId>nassau</artifactId>
     </dependency>
     <dependency>
