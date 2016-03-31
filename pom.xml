@@ -9,14 +9,14 @@
     <version>7</version>
   </parent>
 
-  <groupId>org.jvirtanen.juncture</groupId>
+  <groupId>com.paritytrading.juncture</groupId>
   <artifactId>juncture-parent</artifactId>
   <version>0.1.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Juncture (Parent)</name>
   <description>Connectivity to trading venues on the JVM.</description>
-  <url>https://github.com/jvirtanen/juncture</url>
+  <url>https://github.com/paritytrading/juncture</url>
 
   <licenses>
     <license>
@@ -26,9 +26,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:jvirtanen/juncture.git</connection>
-    <developerConnection>scm:git:git@github.com:jvirtanen/juncture.git</developerConnection>
-    <url>https://github.com/jvirtanen/juncture</url>
+    <connection>scm:git:git@github.com:paritytrading/juncture.git</connection>
+    <developerConnection>scm:git:git@github.com:paritytrading/juncture.git</developerConnection>
+    <url>https://github.com/paritytrading/juncture</url>
     <tag>HEAD</tag>
   </scm>
 

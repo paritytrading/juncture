@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.jvirtanen.juncture</groupId>
+    <groupId>com.paritytrading.juncture</groupId>
     <artifactId>juncture-parent</artifactId>
     <version>0.1.1-SNAPSHOT</version>
   </parent>

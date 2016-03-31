@@ -1,4 +1,4 @@
-package org.jvirtanen.juncture.nasdaq.itch50;
+package com.paritytrading.juncture.nasdaq.itch50;
 
 import java.io.IOException;
 
