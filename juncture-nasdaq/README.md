@@ -17,7 +17,7 @@ See the [Wiki][] for links to the protocol specifications.
 
 Juncture NASDAQ uses [Nassau][] for NASDAQ transport protocol support.
 
-  [Nassau]: https://github.com/jvirtanen/nassau
+  [Nassau]: https://github.com/paritytrading/nassau
 
 
 Download
