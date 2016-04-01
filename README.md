@@ -17,6 +17,17 @@ Juncture implements connectivity to the following trading venues:
   - [**NASDAQ**](juncture-nasdaq)
 
 
+Links
+-----
+
+For more information about Juncture:
+
+  - Follow [@paritytrading](https://twitter.com/paritytrading) on Twitter for
+    news and annoucements
+  - Join [paritytrading/chat](https://gitter.im/paritytrading/chat) on Gitter
+    for discussions
+
+
 License
 -------
 
