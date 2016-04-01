@@ -25,6 +25,13 @@
     </license>
   </licenses>
 
+  <developers>
+    <developer>
+      <name>Jussi Virtanen</name>
+      <email>jussi.virtanen@paritytrading.com</email>
+    </developer>
+  </developers>
+
   <scm>
     <connection>scm:git:git@github.com:paritytrading/juncture.git</connection>
     <developerConnection>scm:git:git@github.com:paritytrading/juncture.git</developerConnection>
