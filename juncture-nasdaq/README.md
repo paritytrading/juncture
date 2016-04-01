@@ -13,7 +13,7 @@ Juncture NASDAQ implements the following protocols:
 
 See the [Wiki][] for links to the protocol specifications.
 
-  [Wiki]: https://github.com/jvirtanen/juncture/wiki/
+  [Wiki]: https://github.com/paritytrading/juncture/wiki/
 
 Juncture NASDAQ uses [Nassau][] for NASDAQ transport protocol support.
 
@@ -26,7 +26,7 @@ Download
 Add a Maven dependency to Juncture NASDAQ:
 
     <dependency>
-      <groupId>org.jvirtanen.juncture</groupId>
+      <groupId>com.paritytrading.juncture</groupId>
       <artifactId>juncture-nasdaq</artifactId>
       <version><!-- latest version --></version>
     </dependency>
