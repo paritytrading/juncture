@@ -966,12 +966,12 @@ public class ITCH50 {
      * An RPII (4.7) message.
      */
     public static class RPII implements Message {
-        int  stockLocate;
-        int  trackingNumber;
-        int  timestampHigh;
-        long timestampLow;
-        long stock;
-        byte interestFlag;
+        public int  stockLocate;
+        public int  trackingNumber;
+        public int  timestampHigh;
+        public long timestampLow;
+        public long stock;
+        public byte interestFlag;
 
         @Override
         public void get(ByteBuffer buffer) {
