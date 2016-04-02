@@ -70,188 +70,88 @@ public class ITCH50Parser implements MessageListener {
 
         switch (messageType) {
         case MESSAGE_TYPE_SYSTEM_EVENT:
-            systemEvent(buffer);
+            systemEvent.get(buffer);
+            listener.systemEvent(systemEvent);
             break;
         case MESSAGE_TYPE_STOCK_DIRECTORY:
-            stockDirectory(buffer);
+            stockDirectory.get(buffer);
+            listener.stockDirectory(stockDirectory);
             break;
         case MESSAGE_TYPE_STOCK_TRADING_ACTION:
-            stockTradingAction(buffer);
+            stockTradingAction.get(buffer);
+            listener.stockTradingAction(stockTradingAction);
             break;
         case MESSAGE_TYPE_REG_SHO_RESTRICTION:
-            regSHORestriction(buffer);
+            regSHORestriction.get(buffer);
+            listener.regSHORestriction(regSHORestriction);
             break;
         case MESSAGE_TYPE_MARKET_PARTICIPANT_POSITION:
-            marketParticipantPosition(buffer);
+            marketParticipantPosition.get(buffer);
+            listener.marketParticipantPosition(marketParticipantPosition);
             break;
         case MESSAGE_TYPE_MWCB_DECLINE_LEVEL:
-            mwcbDeclineLevel(buffer);
+            mwcbDeclineLevel.get(buffer);
+            listener.mwcbDeclineLevel(mwcbDeclineLevel);
             break;
         case MESSAGE_TYPE_MWCB_STATUS:
-            mwcbStatus(buffer);
+            mwcbStatus.get(buffer);
+            listener.mwcbStatus(mwcbStatus);
             break;
         case MESSAGE_TYPE_IPO_QUOTING_PERIOD_UPDATE:
-            ipoQuotingPeriodUpdate(buffer);
+            ipoQuotingPeriodUpdate.get(buffer);
+            listener.ipoQuotingPeriodUpdate(ipoQuotingPeriodUpdate);
             break;
         case MESSAGE_TYPE_ADD_ORDER:
-            addOrder(buffer);
+            addOrder.get(buffer);
+            listener.addOrder(addOrder);
             break;
         case MESSAGE_TYPE_ADD_ORDER_MPID:
-            addOrderMPID(buffer);
+            addOrderMPID.get(buffer);
+            listener.addOrderMPID(addOrderMPID);
             break;
         case MESSAGE_TYPE_ORDER_EXECUTED:
-            orderExecuted(buffer);
+            orderExecuted.get(buffer);
+            listener.orderExecuted(orderExecuted);
             break;
         case MESSAGE_TYPE_ORDER_EXECUTED_WITH_PRICE:
-            orderExecutedWithPrice(buffer);
+            orderExecutedWithPrice.get(buffer);
+            listener.orderExecutedWithPrice(orderExecutedWithPrice);
             break;
         case MESSAGE_TYPE_ORDER_CANCEL:
-            orderCancel(buffer);
+            orderCancel.get(buffer);
+            listener.orderCancel(orderCancel);
             break;
         case MESSAGE_TYPE_ORDER_DELETE:
-            orderDelete(buffer);
+            orderDelete.get(buffer);
+            listener.orderDelete(orderDelete);
             break;
         case MESSAGE_TYPE_ORDER_REPLACE:
-            orderReplace(buffer);
+            orderReplace.get(buffer);
+            listener.orderReplace(orderReplace);
             break;
         case MESSAGE_TYPE_TRADE:
-            trade(buffer);
+            trade.get(buffer);
+            listener.trade(trade);
             break;
         case MESSAGE_TYPE_CROSS_TRADE:
-            crossTrade(buffer);
+            crossTrade.get(buffer);
+            listener.crossTrade(crossTrade);
             break;
         case MESSAGE_TYPE_BROKEN_TRADE:
-            brokenTrade(buffer);
+            brokenTrade.get(buffer);
+            listener.brokenTrade(brokenTrade);
             break;
         case MESSAGE_TYPE_NOII:
-            noii(buffer);
+            noii.get(buffer);
+            listener.noii(noii);
             break;
         case MESSAGE_TYPE_RPII:
-            rpii(buffer);
+            rpii.get(buffer);
+            listener.rpii(rpii);
             break;
         default:
             throw new ITCH50Exception("Unknown message type: " + (char)messageType);
         }
-    }
-
-    private void systemEvent(ByteBuffer buffer) throws IOException {
-        systemEvent.get(buffer);
-
-        listener.systemEvent(systemEvent);
-    }
-
-    private void stockDirectory(ByteBuffer buffer) throws IOException {
-        stockDirectory.get(buffer);
-
-        listener.stockDirectory(stockDirectory);
-    }
-
-    private void stockTradingAction(ByteBuffer buffer) throws IOException {
-        stockTradingAction.get(buffer);
-
-        listener.stockTradingAction(stockTradingAction);
-    }
-
-    private void regSHORestriction(ByteBuffer buffer) throws IOException {
-        regSHORestriction.get(buffer);
-
-        listener.regSHORestriction(regSHORestriction);
-    }
-
-    private void marketParticipantPosition(ByteBuffer buffer) throws IOException {
-        marketParticipantPosition.get(buffer);
-
-        listener.marketParticipantPosition(marketParticipantPosition);
-    }
-
-    private void mwcbDeclineLevel(ByteBuffer buffer) throws IOException {
-        mwcbDeclineLevel.get(buffer);
-
-        listener.mwcbDeclineLevel(mwcbDeclineLevel);
-    }
-
-    private void mwcbStatus(ByteBuffer buffer) throws IOException {
-        mwcbStatus.get(buffer);
-
-        listener.mwcbStatus(mwcbStatus);
-    }
-
-    private void ipoQuotingPeriodUpdate(ByteBuffer buffer) throws IOException {
-        ipoQuotingPeriodUpdate.get(buffer);
-
-        listener.ipoQuotingPeriodUpdate(ipoQuotingPeriodUpdate);
-    }
-
-    private void addOrder(ByteBuffer buffer) throws IOException {
-        addOrder.get(buffer);
-
-        listener.addOrder(addOrder);
-    }
-
-    private void addOrderMPID(ByteBuffer buffer) throws IOException {
-        addOrderMPID.get(buffer);
-
-        listener.addOrderMPID(addOrderMPID);
-    }
-
-    private void orderExecuted(ByteBuffer buffer) throws IOException {
-        orderExecuted.get(buffer);
-
-        listener.orderExecuted(orderExecuted);
-    }
-
-    private void orderExecutedWithPrice(ByteBuffer buffer) throws IOException {
-        orderExecutedWithPrice.get(buffer);
-
-        listener.orderExecutedWithPrice(orderExecutedWithPrice);
-    }
-
-    private void orderCancel(ByteBuffer buffer) throws IOException {
-        orderCancel.get(buffer);
-
-        listener.orderCancel(orderCancel);
-    }
-
-    private void orderDelete(ByteBuffer buffer) throws IOException {
-        orderDelete.get(buffer);
-
-        listener.orderDelete(orderDelete);
-    }
-
-    private void orderReplace(ByteBuffer buffer) throws IOException {
-        orderReplace.get(buffer);
-
-        listener.orderReplace(orderReplace);
-    }
-
-    private void trade(ByteBuffer buffer) throws IOException {
-        trade.get(buffer);
-
-        listener.trade(trade);
-    }
-
-    private void crossTrade(ByteBuffer buffer) throws IOException {
-        crossTrade.get(buffer);
-
-        listener.crossTrade(crossTrade);
-    }
-
-    private void brokenTrade(ByteBuffer buffer) throws IOException {
-        brokenTrade.get(buffer);
-
-        listener.brokenTrade(brokenTrade);
-    }
-
-    private void noii(ByteBuffer buffer) throws IOException {
-        noii.get(buffer);
-
-        listener.noii(noii);
-    }
-
-    private void rpii(ByteBuffer buffer) throws IOException {
-        rpii.get(buffer);
-
-        listener.rpii(rpii);
     }
 
 }
