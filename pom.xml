@@ -60,11 +60,6 @@
         <artifactId>nassau</artifactId>
         <version>0.9.0</version>
       </dependency>
-      <dependency>
-        <groupId>org.jvirtanen.nio</groupId>
-        <artifactId>nio-extras</artifactId>
-        <version>0.2.0</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
 
