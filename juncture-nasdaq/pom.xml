@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.paritytrading.juncture</groupId>
     <artifactId>juncture-parent</artifactId>
-    <version>0.2.1-SNAPSHOT</version>
+    <version>0.3.0</version>
   </parent>
 
   <artifactId>juncture-nasdaq</artifactId>
