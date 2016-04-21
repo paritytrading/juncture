@@ -1,6 +1,6 @@
 package com.paritytrading.juncture.nasdaq.itch50;
 
-import static org.jvirtanen.nio.ByteBuffers.*;
+import static com.paritytrading.foundation.ByteBuffers.*;
 
 import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
