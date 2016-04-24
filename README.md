@@ -21,7 +21,7 @@ Juncture implements connectivity to the following trading venues:
 Links
 -----
 
-For more information about Juncture:
+For more information on Juncture:
 
   - Follow [@paritytrading](https://twitter.com/paritytrading) on Twitter for
     news and annoucements
