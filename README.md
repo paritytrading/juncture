@@ -18,6 +18,14 @@ Juncture implements connectivity to the following trading venues:
   - [**NASDAQ**](juncture-nasdaq)
 
 
+Development
+-----------
+
+See [Parity Guide][].
+
+  [Parity Guide]: https://github.com/paritytrading/documentation
+
+
 Links
 -----
 
