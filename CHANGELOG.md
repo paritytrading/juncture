@@ -2,6 +2,12 @@ Release Notes
 =============
 
 
+0.3.1 (2016-06-05)
+------------------
+
+- Fix handling packet length exceeding buffer capacity in Hotspot ITCH
+
+
 0.3.0 (2016-04-21)
 ------------------
 
