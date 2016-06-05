@@ -80,6 +80,21 @@ public class ITCHServer extends ITCHSession {
     }
 
     /**
+     * Send a Sequenced Data packet (1.2.3).
+     *
+     * @param packet the packet
+     * @param payload the payload
+     * @throws IOException if an I/O error occurs
+     */
+    public void send(SequencedData packet, ByteBuffer payload) throws IOException {
+        txPayload.clear();
+        packet.put(txPayload);
+        txPayload.flip();
+
+        send(MESSAGE_TYPE_SEQUENCED_DATA, txPayload, payload);
+    }
+
+    /**
      * Send an indication of the end of session (1.2.5).
      *
      * @throws IOException if an I/O error occurs

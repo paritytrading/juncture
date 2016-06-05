@@ -60,10 +60,10 @@ public abstract class ITCHSession implements Closeable {
 
         this.txTrailer.put(TLF);
 
-        this.txBuffers = new ByteBuffer[3];
+        this.txBuffers = new ByteBuffer[4];
 
         this.txBuffers[0] = txHeader;
-        this.txBuffers[2] = txTrailer;
+        this.txBuffers[3] = txTrailer;
 
         this.heartbeatMessageType = heartbeatMessageType;
     }
@@ -202,10 +202,31 @@ public abstract class ITCHSession implements Closeable {
         txHeader.flip();
 
         txBuffers[1] = payload;
+        txBuffers[2] = txTrailer;
 
         txTrailer.flip();
 
         int remaining = txHeader.remaining() + payload.remaining() + txTrailer.remaining();
+
+        do {
+            remaining -= channel.write(txBuffers, 0, 3);
+        } while (remaining > 0);
+
+        sentData();
+    }
+
+    protected void send(byte messageType, ByteBuffer payload1, ByteBuffer payload2) throws IOException {
+        txHeader.clear();
+        txHeader.put(messageType);
+        txHeader.flip();
+
+        txBuffers[1] = payload1;
+        txBuffers[2] = payload2;
+
+        txTrailer.flip();
+
+        int remaining = txHeader.remaining() + payload1.remaining() + payload2.remaining()
+                + txTrailer.remaining();
 
         do {
             remaining -= channel.write(txBuffers);

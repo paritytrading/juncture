@@ -41,9 +41,12 @@ class ITCHClientEvents implements ITCHClientListener {
 
     @Override
     public void sequencedData(ITCHClient session, ITCH.SequencedData header, ByteBuffer payload) {
-        String time = ASCII.get(header.time);
+        String time  = ASCII.get(header.time);
+        byte[] bytes = new byte[payload.remaining()];
 
-        events.add(new SequencedData(time));
+        payload.get(bytes);
+
+        events.add(new SequencedData(time, bytes));
     }
 
     @Override
@@ -91,9 +94,11 @@ class ITCHClientEvents implements ITCHClientListener {
 
     public static class SequencedData extends Value implements Event {
         public final String time;
+        public final byte[] payload;
 
-        public SequencedData(String time) {
-            this.time = time;
+        public SequencedData(String time, byte[] payload) {
+            this.time    = time;
+            this.payload = payload;
         }
     }
 

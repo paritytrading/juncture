@@ -7,6 +7,7 @@ import static java.util.Arrays.*;
 import static org.junit.Assert.*;
 
 import com.paritytrading.foundation.ASCII;
+import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import org.junit.After;
@@ -24,6 +25,7 @@ public class ITCHSessionTest {
 
     private ITCH.LoginAccepted       loginAccepted;
     private ITCH.LoginRejected       loginRejected;
+    private ITCH.SequencedData       sequencedData;
     private ITCH.ErrorNotification   errorNotification;
     private ITCH.InstrumentDirectory instrumentDirectory;
 
@@ -46,6 +48,7 @@ public class ITCHSessionTest {
     public void setUp() throws Exception {
         loginAccepted       = new ITCH.LoginAccepted();
         loginRejected       = new ITCH.LoginRejected();
+        sequencedData       = new ITCH.SequencedData();
         errorNotification   = new ITCH.ErrorNotification();
         instrumentDirectory = new ITCH.InstrumentDirectory();
 
@@ -105,7 +108,20 @@ public class ITCHSessionTest {
                     clientEvents.collect());
     }
 
-    /* Sequenced Data */
+    @Test
+    public void sequencedData() throws Exception {
+        ASCII.putLeft(sequencedData.time, "093000250");
+
+        byte[] payload = new byte[] { 'f', 'o', 'o' };
+
+        server.send(sequencedData, ByteBuffer.wrap(payload));
+
+        while (clientEvents.collect().size() != 1)
+            client.receive();
+
+        assertEquals(asList(new SequencedData("093000250", payload)),
+                clientEvents.collect());
+    }
 
     @Test
     public void endOfSession() throws Exception {
