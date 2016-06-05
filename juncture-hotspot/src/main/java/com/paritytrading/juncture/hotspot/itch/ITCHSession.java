@@ -95,10 +95,10 @@ public abstract class ITCHSession implements Closeable {
 
         while (parse());
 
-        if (rxBuffer.limit() == rxBuffer.capacity())
-            throw new ITCHException("Packet length exceeds buffer capacity");
-
         rxBuffer.compact();
+
+        if (rxBuffer.position() == rxBuffer.capacity())
+            throw new ITCHException("Packet length exceeds buffer capacity");
 
         receivedData();
 

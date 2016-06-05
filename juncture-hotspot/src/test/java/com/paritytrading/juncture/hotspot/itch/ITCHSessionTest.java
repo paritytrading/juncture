@@ -14,6 +14,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
 public class ITCHSessionTest {
@@ -22,6 +23,9 @@ public class ITCHSessionTest {
 
     @Rule
     public Timeout timeout = new Timeout(1000);
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
 
     private ITCH.LoginAccepted       loginAccepted;
     private ITCH.LoginRejected       loginRejected;
@@ -121,6 +125,35 @@ public class ITCHSessionTest {
 
         assertEquals(asList(new SequencedData("093000250", payload)),
                 clientEvents.collect());
+    }
+
+    @Test
+    public void fullBuffer() throws Exception {
+        ASCII.putLeft(sequencedData.time, "093000250");
+
+        byte[] payload = repeat((byte)'A', RX_BUFFER_CAPACITY - 11);
+
+        server.send(sequencedData, ByteBuffer.wrap(payload));
+
+        while (clientEvents.collect().size() != 1)
+            client.receive();
+
+        assertEquals(asList(new SequencedData("093000250", payload)),
+                clientEvents.collect());
+    }
+
+    @Test
+    public void packetLengthExceedsBufferCapacity() throws Exception {
+        exception.expect(ITCHException.class);
+
+        ASCII.putLeft(sequencedData.time, "093000250");
+
+        byte[] payload = repeat((byte)'A', RX_BUFFER_CAPACITY - 10);
+
+        server.send(sequencedData, ByteBuffer.wrap(payload));
+
+        while (true)
+            client.receive();
     }
 
     @Test
@@ -286,6 +319,14 @@ public class ITCHSessionTest {
         client.keepAlive();
 
         assertEquals(asList(new HeartbeatTimeout()), clientEvents.collect());
+    }
+
+    private static byte[] repeat(byte val, int num) {
+        byte[] a = new byte[num];
+
+        fill(a, val);
+
+        return a;
     }
 
 }
