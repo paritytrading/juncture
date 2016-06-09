@@ -9,7 +9,7 @@ Features
 
 Juncture Hotspot implements the following protocols:
 
-  - **Hotspot ITCH Protocol 1.59**
+- **Hotspot ITCH Protocol 1.59**
 
 See the [Wiki][] for links to the protocol specifications.
 

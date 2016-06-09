@@ -9,7 +9,7 @@ Features
 
 Juncture NASDAQ implements the following protocols:
 
-  - **NASDAQ TotalView-ITCH 5.0** 
+- **NASDAQ TotalView-ITCH 5.0**
 
 See the [Wiki][] for links to the protocol specifications.
 
