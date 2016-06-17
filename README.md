@@ -15,7 +15,7 @@ Features
 Juncture implements connectivity to the following trading venues:
 
 - [**Bats Hotspot**](juncture-hotspot)
-- [**NASDAQ**](juncture-nasdaq)
+- [**Nasdaq**](juncture-nasdaq)
 
 
 Links

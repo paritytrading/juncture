@@ -1,13 +1,13 @@
-Juncture NASDAQ
+Juncture Nasdaq
 ===============
 
-Juncture NASDAQ implements connectivity to NASDAQ on the JVM.
+Juncture Nasdaq implements connectivity to Nasdaq on the JVM.
 
 
 Features
 --------
 
-Juncture NASDAQ implements the following protocols:
+Juncture Nasdaq implements the following protocols:
 
 - **NASDAQ TotalView-ITCH 5.0**
 
@@ -15,7 +15,7 @@ See the [Wiki][] for links to the protocol specifications.
 
   [Wiki]: https://github.com/paritytrading/juncture/wiki/
 
-Juncture NASDAQ uses [Nassau][] for NASDAQ transport protocol support.
+Juncture Nasdaq uses [Nassau][] for NASDAQ transport protocol support.
 
   [Nassau]: https://github.com/paritytrading/nassau
 
@@ -23,7 +23,7 @@ Juncture NASDAQ uses [Nassau][] for NASDAQ transport protocol support.
 Download
 --------
 
-Add a Maven dependency to Juncture NASDAQ:
+Add a Maven dependency to Juncture Nasdaq:
 
     <dependency>
       <groupId>com.paritytrading.juncture</groupId>
@@ -35,4 +35,4 @@ Add a Maven dependency to Juncture NASDAQ:
 License
 -------
 
-Juncture NASDAQ is released under the Apache License, Version 2.0.
+Juncture Nasdaq is released under the Apache License, Version 2.0.

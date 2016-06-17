@@ -11,7 +11,7 @@
 
   <artifactId>juncture-nasdaq</artifactId>
 
-  <name>Juncture NASDAQ</name>
+  <name>Juncture Nasdaq</name>
 
   <dependencies>
     <dependency>
