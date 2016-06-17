@@ -1,7 +1,8 @@
 Juncture
 ========
 
-Juncture implements connectivity to various trading venues on the JVM.
+Juncture implements low latency connectivity to various trading venues on
+the JVM.
 
 You can use Juncture for both live market access and historical market data
 analysis.
