@@ -1,7 +1,9 @@
 Juncture Nasdaq
 ===============
 
-Juncture Nasdaq implements connectivity to Nasdaq on the JVM.
+Juncture Nasdaq implements connectivity to [Nasdaq][] on the JVM.
+
+  [Nasdaq]: http://nasdaq.com
 
 
 Features
