@@ -37,4 +37,4 @@ Add a Maven dependency to Juncture Nasdaq:
 License
 -------
 
-Juncture Nasdaq is released under the Apache License, Version 2.0.
+Released under the Apache License, Version 2.0.
