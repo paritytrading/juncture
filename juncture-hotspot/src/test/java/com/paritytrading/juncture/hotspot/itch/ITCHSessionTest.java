@@ -10,6 +10,7 @@ import com.paritytrading.foundation.ASCII;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
+import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -22,7 +23,7 @@ public class ITCHSessionTest {
     private static final int RX_BUFFER_CAPACITY = 1024;
 
     @Rule
-    public Timeout timeout = new Timeout(1000);
+    public Timeout timeout = new Timeout(1000, TimeUnit.MILLISECONDS);
 
     @Rule
     public ExpectedException exception = ExpectedException.none();
