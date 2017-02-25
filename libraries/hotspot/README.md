@@ -23,11 +23,17 @@ Download
 
 Add a Maven dependency to Juncture Hotspot:
 
-    <dependency>
-      <groupId>com.paritytrading.juncture</groupId>
-      <artifactId>juncture-hotspot</artifactId>
-      <version><!-- latest version --></version>
-    </dependency>
+```xml
+<dependency>
+  <groupId>com.paritytrading.juncture</groupId>
+  <artifactId>juncture-hotspot</artifactId>
+  <version><!-- latest release --></version>
+</dependency>
+```
+
+See the [latest release][] on GitHub.
+
+  [latest release]: https://github.com/paritytrading/juncture/releases/latest
 
 
 License
