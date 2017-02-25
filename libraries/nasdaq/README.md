@@ -1,13 +1,10 @@
-Juncture Nasdaq
-===============
+# Juncture Nasdaq
 
 Juncture Nasdaq implements connectivity to [Nasdaq][] on the JVM.
 
   [Nasdaq]: http://nasdaq.com
 
-
-Features
---------
+## Features
 
 Juncture Nasdaq implements the following protocols:
 
@@ -21,9 +18,7 @@ Juncture Nasdaq uses [Nassau][] for NASDAQ transport protocol support.
 
   [Nassau]: https://github.com/paritytrading/nassau
 
-
-Download
---------
+## Download
 
 Add a Maven dependency to Juncture Nasdaq:
 
@@ -39,8 +34,6 @@ See the [latest release][] on GitHub.
 
   [latest release]: https://github.com/paritytrading/juncture/releases/latest
 
-
-License
--------
+## License
 
 Released under the Apache License, Version 2.0.

@@ -1,13 +1,10 @@
-Juncture Hotspot
-================
+# Juncture Hotspot
 
 Juncture Hotspot implements connectivity to [Bats Hotspot][] on the JVM.
 
   [Bats Hotspot]: http://hotspotfx.com
 
-
-Features
---------
+## Features
 
 Juncture Hotspot implements the following protocols:
 
@@ -17,9 +14,7 @@ See the [Wiki][] for links to the protocol specifications.
 
   [Wiki]: https://github.com/paritytrading/juncture/wiki/
 
-
-Download
---------
+## Download
 
 Add a Maven dependency to Juncture Hotspot:
 
@@ -35,8 +30,6 @@ See the [latest release][] on GitHub.
 
   [latest release]: https://github.com/paritytrading/juncture/releases/latest
 
-
-License
--------
+## License
 
 Released under the Apache License, Version 2.0.

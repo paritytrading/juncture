@@ -1,5 +1,4 @@
-Juncture
-========
+# Juncture
 
 Juncture implements low latency connectivity to various trading venues on
 the JVM.
@@ -9,18 +8,14 @@ analysis.
 
 Juncture requires Java Runtime Environment (JRE) 7 or newer.
 
-
-Features
---------
+## Features
 
 Juncture implements connectivity to the following trading venues:
 
 - [**Bats Hotspot**](libraries/hotspot)
 - [**Nasdaq**](libraries/nasdaq)
 
-
-Links
------
+## Links
 
 For more information on Juncture:
 
@@ -31,9 +26,7 @@ For more information on Juncture:
 - Join [paritytrading/chat](https://gitter.im/paritytrading/chat) on Gitter
   for discussions
 
-
-License
--------
+## License
 
 Copyright 2015 Jussi Virtanen.
 
