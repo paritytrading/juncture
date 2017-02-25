@@ -45,7 +45,7 @@
   </properties>
 
   <modules>
-    <module>juncture-hotspot</module>
+    <module>libraries/hotspot</module>
     <module>juncture-nasdaq</module>
   </modules>
 
