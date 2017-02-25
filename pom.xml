@@ -46,7 +46,7 @@
 
   <modules>
     <module>libraries/hotspot</module>
-    <module>juncture-nasdaq</module>
+    <module>libraries/nasdaq</module>
   </modules>
 
   <dependencyManagement>
