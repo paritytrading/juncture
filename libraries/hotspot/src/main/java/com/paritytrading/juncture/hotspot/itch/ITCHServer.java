@@ -46,7 +46,7 @@ public class ITCHServer extends ITCHSession {
         this.marketDataSubscribeRequest   = new MarketDataSubscribeRequest();
         this.marketDataUnsubscribeRequest = new MarketDataUnsubscribeRequest();
 
-        this.txPayload = ByteBuffer.allocate(8192);
+        this.txPayload = ByteBuffer.allocateDirect(8192);
 
         this.listener = listener;
     }

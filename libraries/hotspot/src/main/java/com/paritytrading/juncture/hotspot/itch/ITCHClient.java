@@ -44,7 +44,7 @@ public class ITCHClient extends ITCHSession {
         this.errorNotification   = new ErrorNotification();
         this.instrumentDirectory = new InstrumentDirectory();
 
-        this.txPayload = ByteBuffer.allocate(90);
+        this.txPayload = ByteBuffer.allocateDirect(90);
 
         this.listener = listener;
     }

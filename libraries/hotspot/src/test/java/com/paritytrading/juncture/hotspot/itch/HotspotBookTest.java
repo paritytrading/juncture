@@ -154,7 +154,7 @@ public class HotspotBookTest {
 
     @Before
     public void setUp() {
-        buffer = ByteBuffer.allocate(1024);
+        buffer = ByteBuffer.allocateDirect(1024);
 
         events = new HotspotBookEvents();
 

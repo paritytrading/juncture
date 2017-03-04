@@ -53,10 +53,10 @@ public abstract class ITCHSession implements Closeable {
         this.lastRxMillis = clock.currentTimeMillis();
         this.lastTxMillis = clock.currentTimeMillis();
 
-        this.rxBuffer = ByteBuffer.allocate(rxBufferCapacity);
+        this.rxBuffer = ByteBuffer.allocateDirect(rxBufferCapacity);
 
-        this.txHeader  = ByteBuffer.allocate(1);
-        this.txTrailer = ByteBuffer.allocate(1);
+        this.txHeader  = ByteBuffer.allocateDirect(1);
+        this.txTrailer = ByteBuffer.allocateDirect(1);
 
         this.txTrailer.put(TLF);
 
