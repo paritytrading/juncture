@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.paritytrading.juncture</groupId>
     <artifactId>juncture-parent</artifactId>
-    <version>0.4.1-SNAPSHOT</version>
+    <version>0.4.1</version>
     <relativePath>../../pom.xml</relativePath>
   </parent>
 
