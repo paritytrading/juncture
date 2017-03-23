@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.4.1 (2017-03-23)
+
+- Use direct byte buffer
+
 ## 0.4.0 (2017-02-25)
 
 - Improve documentation
