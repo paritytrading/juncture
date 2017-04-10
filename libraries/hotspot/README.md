@@ -1,8 +1,8 @@
 # Juncture Hotspot
 
-Juncture Hotspot implements connectivity to [Bats Hotspot][] on the JVM.
+Juncture Hotspot implements connectivity to [Hotspot][] on the JVM.
 
-  [Bats Hotspot]: http://hotspotfx.com
+  [Hotspot]: http://hotspotfx.com
 
 ## Features
 

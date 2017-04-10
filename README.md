@@ -12,7 +12,7 @@ Juncture requires Java Runtime Environment (JRE) 7 or newer.
 
 Juncture implements connectivity to the following trading venues:
 
-- [**Bats Hotspot**](libraries/hotspot)
+- [**Hotspot**](libraries/hotspot)
 - [**Nasdaq**](libraries/nasdaq)
 
 ## Links
