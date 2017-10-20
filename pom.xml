@@ -45,7 +45,7 @@
   </properties>
 
   <modules>
-    <module>libraries/hotspot</module>
+    <module>libraries/cboe-fx</module>
     <module>libraries/nasdaq</module>
   </modules>
 
