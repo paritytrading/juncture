@@ -1,5 +1,5 @@
 /**
- * This package contains an implementation of Cboe FX ITCH Protocol 1.59.
+ * This package contains an implementation of Cboe FX ITCH Protocol 1.65.
  *
  * <p>The implementation is based on the Java NIO API and consists of two
  * parts:</p>
