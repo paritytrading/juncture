@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.5.0 (2017-10-21)
+
+- Replace Hotspot with Cboe FX
+- Upgrade to Cboe FX ITCH Protocol 1.65
+
 ## 0.4.1 (2017-03-23)
 
 - Use direct byte buffer
