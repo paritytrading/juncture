@@ -8,7 +8,7 @@ Juncture Cboe FX implements connectivity to [Cboe FX][] on the JVM.
 
 Juncture Cboe FX implements the following protocols:
 
-- **Cboe FX ITCH Protocol 1.59**
+- **Cboe FX ITCH Protocol 1.65**
 
 See the [Wiki][] for links to the protocol specifications.
 
