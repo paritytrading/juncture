@@ -15,7 +15,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
 
 public class ITCHSessionTest {
@@ -24,9 +23,6 @@ public class ITCHSessionTest {
 
     @Rule
     public Timeout timeout = new Timeout(1000, TimeUnit.MILLISECONDS);
-
-    @Rule
-    public ExpectedException exception = ExpectedException.none();
 
     private ITCH.LoginAccepted       loginAccepted;
     private ITCH.LoginRejected       loginRejected;
@@ -142,10 +138,8 @@ public class ITCHSessionTest {
                 clientEvents.collect());
     }
 
-    @Test
+    @Test(expected=ITCHException.class)
     public void packetLengthExceedsBufferCapacity() throws Exception {
-        exception.expect(ITCHException.class);
-
         ASCII.putLeft(sequencedData.time, "093000250");
 
         byte[] payload = repeat((byte)'A', RX_BUFFER_CAPACITY - 10);
