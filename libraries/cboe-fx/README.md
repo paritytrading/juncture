@@ -14,6 +14,14 @@ See the [Wiki][] for links to the protocol specifications.
 
   [Wiki]: https://github.com/paritytrading/juncture/wiki/
 
+## Dependencies
+
+Juncture Cboe FX depends on the following libraries:
+
+- [Foundation][] 0.2.1
+
+  [Foundation]: https://github.com/paritytrading/foundation
+
 ## Download
 
 Add a Maven dependency to Juncture Cboe FX:
