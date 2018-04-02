@@ -59,7 +59,7 @@
       <dependency>
         <groupId>com.paritytrading.nassau</groupId>
         <artifactId>nassau-core</artifactId>
-        <version>0.13.0</version>
+        <version>0.13.0</version> <!-- (mentioned in documentation) -->
       </dependency>
       <dependency>
         <groupId>junit</groupId>
