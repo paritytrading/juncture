@@ -40,7 +40,7 @@ public class CboeFXBook {
          * Write this message to the buffer.
          *
          * @param buffer a buffer
-         * @throws BufferUnderflowException if there are fewer bytes remaining
+         * @throws BufferOverflowException if there are fewer bytes remaining
          *   in the buffer than what this message consists of
          * @throws ReadOnlyBufferException if the buffer is read-only
          */
