@@ -3,7 +3,6 @@ package com.paritytrading.juncture.cboe.fx.itch;
 import com.paritytrading.juncture.cboe.fx.itch.ITCHSessionEvents.*;
 
 import com.paritytrading.foundation.ASCII;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import org.jvirtanen.value.Value;
