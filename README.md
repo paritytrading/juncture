@@ -26,6 +26,8 @@ For more information on Juncture:
 
 ## License
 
-Copyright 2015 Jussi Virtanen.
+Copyright 2015 Jussi Virtanen and [contributors][].
+
+  [contributors]: https://github.com/paritytrading/juncture/graphs/contributors
 
 Released under the Apache License, Version 2.0. See `LICENSE.txt` for details.
