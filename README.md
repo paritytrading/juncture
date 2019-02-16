@@ -6,7 +6,7 @@ the JVM.
 You can use Juncture for both live market access and historical market data
 analysis.
 
-Juncture requires Java Runtime Environment (JRE) 7 or newer.
+Juncture requires Java Runtime Environment (JRE) 8 or newer.
 
 ## Features
 
