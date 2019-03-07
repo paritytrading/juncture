@@ -31,6 +31,7 @@ public class ITCH50 {
     public static final byte MESSAGE_TYPE_MWCB_STATUS                 = 'W';
     public static final byte MESSAGE_TYPE_IPO_QUOTING_PERIOD_UPDATE   = 'K';
     public static final byte MESSAGE_TYPE_LULD_AUCTION_COLLAR         = 'J';
+    public static final byte MESSAGE_TYPE_OPERATIONAL_HALT            = 'h';
     public static final byte MESSAGE_TYPE_ADD_ORDER                   = 'A';
     public static final byte MESSAGE_TYPE_ADD_ORDER_MPID              = 'F';
     public static final byte MESSAGE_TYPE_ORDER_EXECUTED              = 'E';
@@ -138,6 +139,19 @@ public class ITCH50 {
      */
     public static final byte IPO_QUOTATION_RELEASE_QUALIFIER_ANTICIPATED_QUOTATION_TIME     = 'A';
     public static final byte IPO_QUOTATION_RELEASE_QUALIFIER_IPO_RELEASE_CANCELED_POSTPONED = 'C';
+
+    /*
+     * Market Code (4.2.8) values.
+     */
+    public static final byte MARKET_CODE_NASDAQ = 'Q';
+    public static final byte MARKET_CODE_BX     = 'B';
+    public static final byte MARKET_CODE_PSX    = 'X';
+
+    /*
+     * Operational Halt Action (4.2.8) values.
+     */
+    public static final byte OPERATIONAL_HALT_ACTION_OPERATIONALLY_HALTED = 'H';
+    public static final byte OPERATIONAL_HALT_ACTION_TRADING_RESUMED      = 'T';
 
     /*
      * Cross Type (4.5.2) values.
@@ -564,6 +578,42 @@ public class ITCH50 {
             putUnsignedInt(buffer, upperAuctionCollarPrice);
             putUnsignedInt(buffer, lowerAuctionCollarPrice);
             putUnsignedInt(buffer, auctionCollarExtension);
+        }
+    }
+
+    /**
+     * An Operational Halt (4.2.8) message.
+     */
+    public static class OperationalHalt implements Message {
+        public int  stockLocate;
+        public int  trackingNumber;
+        public int  timestampHigh;
+        public long timestampLow;
+        public long stock;
+        public byte marketCode;
+        public byte operationalHaltAction;
+
+        @Override
+        public void get(ByteBuffer buffer) {
+            stockLocate           = getUnsignedShort(buffer);
+            trackingNumber        = getUnsignedShort(buffer);
+            timestampHigh         = getUnsignedShort(buffer);
+            timestampLow          = getUnsignedInt(buffer);
+            stock                 = buffer.getLong();
+            marketCode            = buffer.get();
+            operationalHaltAction = buffer.get();
+        }
+
+        @Override
+        public void put(ByteBuffer buffer) {
+            buffer.put(MESSAGE_TYPE_OPERATIONAL_HALT);
+            putUnsignedShort(buffer, stockLocate);
+            putUnsignedShort(buffer, trackingNumber);
+            putUnsignedShort(buffer, timestampHigh);
+            putUnsignedInt(buffer, timestampLow);
+            buffer.putLong(stock);
+            buffer.put(marketCode);
+            buffer.put(operationalHaltAction);
         }
     }
 

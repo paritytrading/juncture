@@ -82,6 +82,14 @@ public interface ITCH50Listener {
     void luldAuctionCollar(LULDAuctionCollar message) throws IOException;
 
     /**
+     * Receive an Operational Halt message.
+     *
+     * @param message the message
+     * @throws IOException if an I/O error occurs
+     */
+    void operationalHalt(OperationalHalt message) throws IOException;
+
+    /**
      * Receive an Add Order message.
      *
      * @param message the message
