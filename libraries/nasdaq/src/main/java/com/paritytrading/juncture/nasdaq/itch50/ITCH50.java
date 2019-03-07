@@ -30,6 +30,7 @@ public class ITCH50 {
     public static final byte MESSAGE_TYPE_MWCB_DECLINE_LEVEL          = 'V';
     public static final byte MESSAGE_TYPE_MWCB_STATUS                 = 'W';
     public static final byte MESSAGE_TYPE_IPO_QUOTING_PERIOD_UPDATE   = 'K';
+    public static final byte MESSAGE_TYPE_LULD_AUCTION_COLLAR         = 'J';
     public static final byte MESSAGE_TYPE_ADD_ORDER                   = 'A';
     public static final byte MESSAGE_TYPE_ADD_ORDER_MPID              = 'F';
     public static final byte MESSAGE_TYPE_ORDER_EXECUTED              = 'E';
@@ -521,6 +522,48 @@ public class ITCH50 {
             putUnsignedInt(buffer, ipoQuotationReleaseTime);
             buffer.put(ipoQuotationReleaseQualifier);
             putUnsignedInt(buffer, ipoPrice);
+        }
+    }
+
+    /**
+     * A LULD Auction Collar (4.2.7) message.
+     */
+    public static class LULDAuctionCollar implements Message {
+        public int  stockLocate;
+        public int  trackingNumber;
+        public int  timestampHigh;
+        public long timestampLow;
+        public long stock;
+        public long auctionCollarReferencePrice;
+        public long upperAuctionCollarPrice;
+        public long lowerAuctionCollarPrice;
+        public long auctionCollarExtension;
+
+        @Override
+        public void get(ByteBuffer buffer) {
+            stockLocate                 = getUnsignedShort(buffer);
+            trackingNumber              = getUnsignedShort(buffer);
+            timestampHigh               = getUnsignedShort(buffer);
+            timestampLow                = getUnsignedInt(buffer);
+            stock                       = buffer.getLong();
+            auctionCollarReferencePrice = getUnsignedInt(buffer);
+            upperAuctionCollarPrice     = getUnsignedInt(buffer);
+            lowerAuctionCollarPrice     = getUnsignedInt(buffer);
+            auctionCollarExtension      = getUnsignedInt(buffer);
+        }
+
+        @Override
+        public void put(ByteBuffer buffer) {
+            buffer.put(MESSAGE_TYPE_LULD_AUCTION_COLLAR);
+            putUnsignedShort(buffer, stockLocate);
+            putUnsignedShort(buffer, trackingNumber);
+            putUnsignedShort(buffer, timestampHigh);
+            putUnsignedInt(buffer, timestampLow);
+            buffer.putLong(stock);
+            putUnsignedInt(buffer, auctionCollarReferencePrice);
+            putUnsignedInt(buffer, upperAuctionCollarPrice);
+            putUnsignedInt(buffer, lowerAuctionCollarPrice);
+            putUnsignedInt(buffer, auctionCollarExtension);
         }
     }
 
