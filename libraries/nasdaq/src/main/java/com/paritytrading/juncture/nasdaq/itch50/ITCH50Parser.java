@@ -19,6 +19,8 @@ public class ITCH50Parser implements MessageListener {
     private MWCBDeclineLevel          mwcbDeclineLevel;
     private MWCBStatus                mwcbStatus;
     private IPOQuotingPeriodUpdate    ipoQuotingPeriodUpdate;
+    private LULDAuctionCollar         luldAuctionCollar;
+    private OperationalHalt           operationalHalt;
     private AddOrder                  addOrder;
     private AddOrderMPID              addOrderMPID;
     private OrderExecuted             orderExecuted;
@@ -48,6 +50,8 @@ public class ITCH50Parser implements MessageListener {
         this.mwcbDeclineLevel          = new MWCBDeclineLevel();
         this.mwcbStatus                = new MWCBStatus();
         this.ipoQuotingPeriodUpdate    = new IPOQuotingPeriodUpdate();
+        this.luldAuctionCollar         = new LULDAuctionCollar();
+        this.operationalHalt           = new OperationalHalt();
         this.addOrder                  = new AddOrder();
         this.addOrderMPID              = new AddOrderMPID();
         this.orderExecuted             = new OrderExecuted();
@@ -100,6 +104,14 @@ public class ITCH50Parser implements MessageListener {
         case MESSAGE_TYPE_IPO_QUOTING_PERIOD_UPDATE:
             ipoQuotingPeriodUpdate.get(buffer);
             listener.ipoQuotingPeriodUpdate(ipoQuotingPeriodUpdate);
+            break;
+        case MESSAGE_TYPE_LULD_AUCTION_COLLAR:
+            luldAuctionCollar.get(buffer);
+            listener.luldAuctionCollar(luldAuctionCollar);
+            break;
+        case MESSAGE_TYPE_OPERATIONAL_HALT:
+            operationalHalt.get(buffer);
+            listener.operationalHalt(operationalHalt);
             break;
         case MESSAGE_TYPE_ADD_ORDER:
             addOrder.get(buffer);
