@@ -1,5 +1,11 @@
 # Release Notes
 
+## 0.6.0 (2019-03-31)
+
+- Remove Foundation dependency from Juncture Nasdaq
+- Add Operational Halt message to Juncture Nasdaq
+- Add LULD Auction Collar message to Juncture Nasdaq
+
 ## 0.5.0 (2017-10-21)
 
 - Replace Hotspot with Cboe FX
