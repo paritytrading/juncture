@@ -1,7 +1,5 @@
 package com.paritytrading.juncture.cboe.fx.itch;
 
-import static com.paritytrading.juncture.cboe.fx.itch.ITCH.*;
-
 import java.io.Closeable;
 import java.io.IOException;
 import java.nio.ByteBuffer;
