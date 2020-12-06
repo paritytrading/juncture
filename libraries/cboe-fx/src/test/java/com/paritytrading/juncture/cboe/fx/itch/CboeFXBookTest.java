@@ -17,14 +17,14 @@ package com.paritytrading.juncture.cboe.fx.itch;
 
 import static com.paritytrading.juncture.cboe.fx.itch.CboeFXBookEvents.*;
 import static java.util.Arrays.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.paritytrading.foundation.ASCII;
 import java.nio.ByteBuffer;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class CboeFXBookTest {
+class CboeFXBookTest {
 
     private static final String SNAPSHOT_EMPTY = "" +
         "S" +     // Message Type
@@ -167,8 +167,8 @@ public class CboeFXBookTest {
     private CboeFXBookFormatter formatter;
     private CboeFXBookParser    parser;
 
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         buffer = ByteBuffer.allocateDirect(1024);
 
         events = new CboeFXBookEvents();
@@ -178,7 +178,7 @@ public class CboeFXBookTest {
     }
 
     @Test
-    public void formatEmptySnapshot() {
+    void formatEmptySnapshot() {
         formatter.marketSnapshotStart(buffer);
         formatter.marketSnapshotEnd(buffer);
 
@@ -188,14 +188,14 @@ public class CboeFXBookTest {
     }
 
     @Test
-    public void parseEmptySnapshot() throws Exception {
+    void parseEmptySnapshot() throws Exception {
         parser.parse(wrap(SNAPSHOT_EMPTY));
 
         assertEquals(asList(START, END), events.collect());
     }
 
     @Test
-    public void formatSnapshotWithBid() {
+    void formatSnapshotWithBid() {
         formatter.marketSnapshotStart(buffer);
         formatter.marketSnapshotEntry(buffer, entry(BID));
         formatter.marketSnapshotEnd(buffer);
@@ -206,14 +206,14 @@ public class CboeFXBookTest {
     }
 
     @Test
-    public void parseSnapshotWithBid() throws Exception {
+    void parseSnapshotWithBid() throws Exception {
         parser.parse(wrap(SNAPSHOT_BID));
 
         assertEquals(asList(START, BID, END), events.collect());
     }
 
     @Test
-    public void formatSnapshotWithOffer() {
+    void formatSnapshotWithOffer() {
         formatter.marketSnapshotStart(buffer);
         formatter.marketSnapshotEntry(buffer, entry(OFFER));
         formatter.marketSnapshotEnd(buffer);
@@ -224,14 +224,14 @@ public class CboeFXBookTest {
     }
 
     @Test
-    public void parseSnapshotWithOffer() throws Exception {
+    void parseSnapshotWithOffer() throws Exception {
         parser.parse(wrap(SNAPSHOT_OFFER));
 
         assertEquals(asList(START, OFFER, END), events.collect());
     }
 
     @Test
-    public void formatSnapshotWithBidAndOffer() {
+    void formatSnapshotWithBidAndOffer() {
         formatter.marketSnapshotStart(buffer);
         formatter.marketSnapshotEntry(buffer, entry(BID));
         formatter.marketSnapshotEntry(buffer, entry(OFFER));
@@ -243,14 +243,14 @@ public class CboeFXBookTest {
     }
 
     @Test
-    public void parseSnapshotWithBidAndOffer() throws Exception {
+    void parseSnapshotWithBidAndOffer() throws Exception {
         parser.parse(wrap(SNAPSHOT_BID_OFFER));
 
         assertEquals(asList(START, BID, OFFER, END), events.collect());
     }
 
     @Test
-    public void formatSnapshotWithBidAndBid2() {
+    void formatSnapshotWithBidAndBid2() {
         formatter.marketSnapshotStart(buffer);
         formatter.marketSnapshotEntry(buffer, entry(BID));
         formatter.marketSnapshotEntry(buffer, entry(BID_2));
@@ -262,14 +262,14 @@ public class CboeFXBookTest {
     }
 
     @Test
-    public void parseSnapshotWithBidAndBid2() throws Exception {
+    void parseSnapshotWithBidAndBid2() throws Exception {
         parser.parse(wrap(SNAPSHOT_BID_BID_2));
 
         assertEquals(asList(START, BID, BID_2, END), events.collect());
     }
 
     @Test
-    public void formatSnapshotWithOfferAndOffer2() {
+    void formatSnapshotWithOfferAndOffer2() {
         formatter.marketSnapshotStart(buffer);
         formatter.marketSnapshotEntry(buffer, entry(OFFER));
         formatter.marketSnapshotEntry(buffer, entry(OFFER_2));
@@ -281,7 +281,7 @@ public class CboeFXBookTest {
     }
 
     @Test
-    public void parseSnapshotWithOfferAndOffer2() throws Exception {
+    void parseSnapshotWithOfferAndOffer2() throws Exception {
         parser.parse(wrap(SNAPSHOT_OFFER_OFFER_2));
 
         assertEquals(asList(START, OFFER, OFFER_2, END), events.collect());

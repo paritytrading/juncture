@@ -19,25 +19,22 @@ import static com.paritytrading.juncture.cboe.fx.itch.ITCHClientEvents.*;
 import static com.paritytrading.juncture.cboe.fx.itch.ITCHServerEvents.*;
 import static com.paritytrading.juncture.cboe.fx.itch.ITCHSessionEvents.*;
 import static java.util.Arrays.*;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import com.paritytrading.foundation.ASCII;
 import java.nio.ByteBuffer;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.concurrent.TimeUnit;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
-public class ITCHSessionTest {
+@Timeout(value=1, unit=TimeUnit.SECONDS)
+class ITCHSessionTest {
 
     private static final int RX_BUFFER_CAPACITY = 1024;
-
-    @Rule
-    public Timeout timeout = new Timeout(1000, TimeUnit.MILLISECONDS);
 
     private ITCH.LoginAccepted       loginAccepted;
     private ITCH.LoginRejected       loginRejected;
@@ -60,8 +57,8 @@ public class ITCHSessionTest {
     private ITCHClient client;
     private ITCHServer server;
 
-    @Before
-    public void setUp() throws Exception {
+    @BeforeEach
+    void setUp() throws Exception {
         loginAccepted       = new ITCH.LoginAccepted();
         loginRejected       = new ITCH.LoginRejected();
         sequencedData       = new ITCH.SequencedData();
@@ -92,14 +89,14 @@ public class ITCHSessionTest {
         server = new ITCHServer(clock, serverChannel, RX_BUFFER_CAPACITY, serverEvents);
     }
 
-    @After
-    public void tearDown() throws Exception {
+    @AfterEach
+    void tearDown() throws Exception {
         client.close();
         server.close();
     }
 
     @Test
-    public void loginAccepted() throws Exception {
+    void loginAccepted() throws Exception {
         ASCII.putLongRight(loginAccepted.sequenceNumber, 1);
 
         server.accept(loginAccepted);
@@ -111,7 +108,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void loginRejected() throws Exception {
+    void loginRejected() throws Exception {
         ASCII.putLeft(loginRejected.reason, "foo");
 
         server.reject(loginRejected);
@@ -124,7 +121,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void sequencedData() throws Exception {
+    void sequencedData() throws Exception {
         ASCII.putLeft(sequencedData.time, "093000250");
 
         byte[] payload = new byte[] { 'f', 'o', 'o' };
@@ -139,7 +136,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void fullBuffer() throws Exception {
+    void fullBuffer() throws Exception {
         ASCII.putLeft(sequencedData.time, "093000250");
 
         byte[] payload = repeat((byte)'A', RX_BUFFER_CAPACITY - 11);
@@ -153,20 +150,22 @@ public class ITCHSessionTest {
                 clientEvents.collect());
     }
 
-    @Test(expected=ITCHException.class)
-    public void packetLengthExceedsBufferCapacity() throws Exception {
+    @Test
+    void packetLengthExceedsBufferCapacity() throws Exception {
         ASCII.putLeft(sequencedData.time, "093000250");
 
         byte[] payload = repeat((byte)'A', RX_BUFFER_CAPACITY - 10);
 
         server.send(sequencedData, ByteBuffer.wrap(payload));
 
-        while (true)
-            client.receive();
+        assertThrows(ITCHException.class, () -> {
+            while (true)
+                client.receive();
+        });
     }
 
     @Test
-    public void endOfSession() throws Exception {
+    void endOfSession() throws Exception {
         server.endSession();
 
         while (clientEvents.collect().size() != 1)
@@ -176,7 +175,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void errorNotification() throws Exception {
+    void errorNotification() throws Exception {
         ASCII.putLeft(errorNotification.errorExplanation, "foo");
 
         server.notifyError(errorNotification);
@@ -191,7 +190,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void instrumentDirectory() throws Exception {
+    void instrumentDirectory() throws Exception {
         ASCII.putLongRight(instrumentDirectory.numberOfCurrencyPairs, 3);
         ASCII.putLeft(instrumentDirectory.currencyPair[0], "FOO/BAR");
         ASCII.putLeft(instrumentDirectory.currencyPair[1], "BAR/BAZ");
@@ -207,7 +206,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void loginRequest() throws Exception {
+    void loginRequest() throws Exception {
         ASCII.putLeft(loginRequest.loginName, "foo");
         ASCII.putLeft(loginRequest.password, "bar");
         loginRequest.marketDataUnsubscribe = ITCH.TRUE;
@@ -226,7 +225,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void logoutRequest() throws Exception {
+    void logoutRequest() throws Exception {
         client.logout();
 
         while (serverEvents.collect().size() != 1)
@@ -236,7 +235,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void marketSnapshotRequest() throws Exception {
+    void marketSnapshotRequest() throws Exception {
         ASCII.putLeft(marketSnapshotRequest.currencyPair, "FOO/BAR");
 
         client.request(marketSnapshotRequest);
@@ -249,7 +248,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void tickerSubscription() throws Exception {
+    void tickerSubscription() throws Exception {
         ASCII.putLeft(tickerSubscribeRequest.currencyPair, "FOO/BAR");
         ASCII.putLeft(tickerUnsubscribeRequest.currencyPair, "FOO/BAR");
 
@@ -265,7 +264,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void marketDataSubscription() throws Exception {
+    void marketDataSubscription() throws Exception {
         ASCII.putLeft(marketDataSubscribeRequest.currencyPair, "FOO/BAR");
         ASCII.putLeft(marketDataUnsubscribeRequest.currencyPair, "FOO/BAR");
 
@@ -281,7 +280,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void instrumentDirectoryRequest() throws Exception {
+    void instrumentDirectoryRequest() throws Exception {
         client.requestInstrumentDirectory();
 
         while (serverEvents.collect().size() != 1)
@@ -291,7 +290,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void serverKeepAlive() throws Exception {
+    void serverKeepAlive() throws Exception {
         clock.setCurrentTimeMillis(1500);
 
         client.keepAlive();
@@ -311,7 +310,7 @@ public class ITCHSessionTest {
     }
 
     @Test
-    public void clientKeepAlive() throws Exception {
+    void clientKeepAlive() throws Exception {
         clock.setCurrentTimeMillis(1500);
 
         client.keepAlive();
