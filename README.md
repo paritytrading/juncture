@@ -21,8 +21,6 @@ For more information on Juncture:
 
 - Follow [@paritytrading](https://twitter.com/paritytrading) on Twitter for
   news and annoucements
-- Join [paritytrading/chat](https://gitter.im/paritytrading/chat) on Gitter
-  for discussions
 
 ## License
 
