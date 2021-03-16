@@ -6,9 +6,7 @@
 
 The following artifacts are available in the Central Repository:
 
-Name             | Artifact ID        | Version
------------------|--------------------|--------
-Juncture Cboe FX | `juncture-cboe-fx` | `...`
-Juncture Nasdaq  | `juncture-nasdaq`  | `...`
-
-The **Group ID** for all artifacts is `com.paritytrading.juncture`.
+GroupID                      | Artifact ID        | Version
+-----------------------------|--------------------|--------
+`com.paritytrading.juncture` | `juncture-cboe-fx` | `...`
+`com.paritytrading.juncture` | `juncture-nasdaq`  | `...`
