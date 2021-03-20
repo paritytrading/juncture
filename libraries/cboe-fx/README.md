@@ -18,7 +18,7 @@ See the [Wiki][] for links to the protocol specifications.
 
 Juncture Cboe FX depends on the following libraries:
 
-- [Foundation][] 0.2.1
+- [Foundation][] 0.3.0
 
   [Foundation]: https://github.com/paritytrading/foundation
 
