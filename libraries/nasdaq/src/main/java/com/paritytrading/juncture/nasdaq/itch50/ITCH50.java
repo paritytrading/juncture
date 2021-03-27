@@ -1103,20 +1103,4 @@ public class ITCH50 {
         }
     }
 
-    private static int getUnsignedShort(ByteBuffer buffer) {
-        return buffer.getShort() & 0xffff;
-    }
-
-    private static void putUnsignedShort(ByteBuffer buffer, int value) {
-        buffer.putShort((short)value);
-    }
-
-    private static long getUnsignedInt(ByteBuffer buffer) {
-        return buffer.getInt() & 0xffffffffL;
-    }
-
-    private static void putUnsignedInt(ByteBuffer buffer, long value) {
-        buffer.putInt((int)value);
-    }
-
 }
