@@ -1026,7 +1026,7 @@ public class ITCH50 {
         public long timestampLow;
         public long pairedShares;
         public long imbalanceShares;
-        public byte imbalanceDirection;
+        public char imbalanceDirection;
         public long stock;
         public long farPrice;
         public long nearPrice;
@@ -1042,7 +1042,7 @@ public class ITCH50 {
             timestampLow            = getUnsignedInt(buffer);
             pairedShares            = buffer.getLong();
             imbalanceShares         = buffer.getLong();
-            imbalanceDirection      = buffer.get();
+            imbalanceDirection      = (char) buffer.get();
             stock                   = buffer.getLong();
             farPrice                = getUnsignedInt(buffer);
             nearPrice               = getUnsignedInt(buffer);
@@ -1060,7 +1060,7 @@ public class ITCH50 {
             putUnsignedInt(buffer, timestampLow);
             buffer.putLong(pairedShares);
             buffer.putLong(imbalanceShares);
-            buffer.put(imbalanceDirection);
+            buffer.put((byte) imbalanceDirection);
             buffer.putLong(stock);
             putUnsignedInt(buffer, farPrice);
             putUnsignedInt(buffer, nearPrice);
