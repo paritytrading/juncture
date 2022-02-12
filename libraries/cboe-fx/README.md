@@ -1,6 +1,6 @@
 # Juncture Cboe FX
 
-Juncture Cboe FX implements connectivity to [Cboe FX][] on the JVM.
+Juncture Cboe FX implements connectivity to [Cboe FX][].
 
   [Cboe FX]: http://fx.cboe.com
 

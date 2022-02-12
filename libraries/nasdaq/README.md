@@ -1,6 +1,6 @@
 # Juncture Nasdaq
 
-Juncture Nasdaq implements connectivity to [Nasdaq][] on the JVM.
+Juncture Nasdaq implements connectivity to [Nasdaq][].
 
   [Nasdaq]: http://nasdaq.com
 
@@ -14,7 +14,7 @@ See the [Wiki][] for links to the protocol specifications.
 
   [Wiki]: https://github.com/paritytrading/juncture/wiki/
 
-Juncture Nasdaq uses [Nassau][] for NASDAQ transport protocol support.
+Juncture Nasdaq uses [Nassau][] for Nasdaq transport protocol support.
 
   [Nassau]: https://github.com/paritytrading/nassau
 
