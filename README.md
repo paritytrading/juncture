@@ -1,10 +1,6 @@
 # Juncture
 
-Juncture implements low latency connectivity to various trading venues on
-the JVM.
-
-You can use Juncture for both live market access and historical market data
-analysis.
+Juncture is a fast trading protocol library for the JVM.
 
 Juncture requires Java Runtime Environment (JRE) 8 or newer.
 

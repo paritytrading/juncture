@@ -29,7 +29,7 @@
   <packaging>pom</packaging>
 
   <name>Juncture (Parent)</name>
-  <description>Connectivity to trading venues on the JVM.</description>
+  <description>A fast trading protocol library.</description>
   <url>https://github.com/paritytrading/juncture</url>
 
   <licenses>
