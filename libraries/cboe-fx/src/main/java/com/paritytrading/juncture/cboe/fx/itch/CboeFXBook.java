@@ -15,6 +15,7 @@
  */
 package com.paritytrading.juncture.cboe.fx.itch;
 
+import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.nio.ByteBuffer;
 import java.nio.ReadOnlyBufferException;
