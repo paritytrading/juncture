@@ -8,7 +8,6 @@ Juncture requires Java Runtime Environment (JRE) 8 or newer.
 
 Juncture implements connectivity to the following trading venues:
 
-- [**Cboe FX**](libraries/cboe-fx)
 - [**Nasdaq**](libraries/nasdaq)
 
 ## Links
