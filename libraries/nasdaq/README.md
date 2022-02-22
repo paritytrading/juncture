@@ -2,17 +2,15 @@
 
 Juncture Nasdaq implements connectivity to [Nasdaq][].
 
-  [Nasdaq]: http://nasdaq.com
+  [Nasdaq]: https://nasdaq.com
 
 ## Features
 
 Juncture Nasdaq implements the following protocols:
 
-- **NASDAQ TotalView-ITCH 5.0**
+- [**NASDAQ TotalView-ITCH 5.0**][itch]
 
-See the [Wiki][] for links to the protocol specifications.
-
-  [Wiki]: https://github.com/paritytrading/juncture/wiki/
+  [itch]: https://www.nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTVITCHspecification.pdf
 
 Juncture Nasdaq uses [Nassau][] for Nasdaq transport protocol support.
 
@@ -23,7 +21,7 @@ Juncture Nasdaq uses [Nassau][] for Nasdaq transport protocol support.
 Juncture Nasdaq depends on the following libraries:
 
 - [Foundation][] 0.3.0
-- Nassau Core 0.13.0
+- [Nassau][] Core 0.13.0
 
   [Foundation]: https://github.com/paritytrading/foundation
 
