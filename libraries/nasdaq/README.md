@@ -21,7 +21,7 @@ Juncture Nasdaq uses [Nassau][] for Nasdaq transport protocol support.
 Juncture Nasdaq depends on the following libraries:
 
 - [Foundation][] 1.0.0
-- [Nassau][] Core 0.13.0
+- [Nassau][] Core 1.0.0
 
   [Foundation]: https://github.com/paritytrading/foundation
 
