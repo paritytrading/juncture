@@ -1,5 +1,17 @@
 # Release Notes
 
+## 1.0.0 (2022-03-04)
+
+- Improve code quality (Jan Nielsen, Jussi Virtanen)
+
+- Remove Cboe FX support (Jussi Virtanen)
+
+  The Cboe FX documentation is no longer publicly available.
+
+- Upgrade to Foundation 1.0.0 (Jussi Virtanen)
+
+- Upgrade to Nassau 1.0.0 (Jussi Virtanen)
+
 ## 0.6.0 (2019-03-31)
 
 - Remove Foundation dependency from Juncture Nasdaq
