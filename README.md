@@ -10,13 +10,6 @@ Juncture implements connectivity to the following trading venues:
 
 - [**Nasdaq**](libraries/nasdaq)
 
-## Links
-
-For more information on Juncture:
-
-- Follow [@paritytrading](https://twitter.com/paritytrading) on Twitter for
-  news and annoucements
-
 ## License
 
 Copyright 2015 Juncture authors.
