@@ -2,7 +2,7 @@
 
 Juncture is a fast trading protocol library for the JVM.
 
-Juncture requires Java Runtime Environment (JRE) 8 or newer.
+Juncture requires Java Runtime Environment (JRE) 11 or newer.
 
 ## Features
 
